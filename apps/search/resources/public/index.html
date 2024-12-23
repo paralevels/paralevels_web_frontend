@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+    <h1>Search</h1>
+    <form id="search-form">
+        <input type="text" id="query" name="query" placeholder="Enter search term" required>
+        <button type="submit">Search</button>
+    </form>
+    <div id="search-results"></div>
+
+    <script>
+        const form = document.getElementById('search-form');
+        const resultsDiv = document.getElementById('search-results');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            const query = document.getElementById('query').value;
+
+            // Clear previous results
+            resultsDiv.innerHTML = '';
+
+            // Fetch data from the search API
+            fetch(`http://localhost:8080/search?query=${encodeURIComponent(query)}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Populate the results in the search-results div
+                    if (Array.isArray(data) && data.length > 0) {
+                        data.forEach(item => {
+                            const itemDiv = document.createElement('div');
+                            itemDiv.className = 'search-result';
+                            itemDiv.textContent = JSON.stringify(item, null, 2); // Display JSON as text
+                            resultsDiv.appendChild(itemDiv);
+                        });
+                    } else {
+                        resultsDiv.textContent = 'No results found.';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    resultsDiv.textContent = 'An error occurred while fetching search results.';
+                });
+        });
+    </script>
+<!--
+    <script>
+        const form = document.getElementById('search-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const query = document.getElementById('query').value;
+            fetch(`http://localhost:8080/search?query=${encodeURIComponent(query)}`)
+                .then(response => response.json())
+                .then(data => console.log('Search result:', data))
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+-->
+</body>
+</html>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Search</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
 </head>
 <body>
     <h1>Search</h1>
@@ -36,8 +37,17 @@
                     if (Array.isArray(data) && data.length > 0) {
                         data.forEach(item => {
                             const itemDiv = document.createElement('div');
+                            const itemImg = document.createElement('img');
+                            const itemCaptions = document.createElement('div');
+                            const itemLabels = document.createElement('div');
                             itemDiv.className = 'search-result';
-                            itemDiv.textContent = JSON.stringify(item, null, 2); // Display JSON as text
+                            itemImg.src = 'http://192.168.0.16/static/img' + item.filepath;
+                            itemImg.width = 400;
+                            itemCaptions.textContent = 'Captions: ' + item.captions.join(' ');
+                            itemLabels.textContent = 'Labels: ' + item.labels.join(' ');
+                            itemDiv.appendChild(itemImg);
+                            itemDiv.appendChild(itemCaptions);
+                            itemDiv.appendChild(itemLabels);
                             resultsDiv.appendChild(itemDiv);
                         });
                     } else {

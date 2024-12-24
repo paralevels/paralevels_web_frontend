@@ -7,8 +7,11 @@
 </head>
 <body>
     <form id="search-form">
-        <input type="text" id="query" name="query" placeholder="Enter search term" required>
-        <button type="submit">Search</button>
+      <input type="text" id="query" name="query" placeholder="Enter search term" required>
+      <!-- Cursor mark is used for pagination with Solr. -->
+      <!-- Using cursor mark is faster than working with start row and total number of rows. -->
+      <input type="hidden" id="cursor-mark" name="cursor-mark" value="*">
+      <button type="submit">Search</button>
     </form>
     <div id="search-results"></div>
 
@@ -19,12 +22,13 @@
         form.addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent form submission
             const query = document.getElementById('query').value;
+            const cursorMark = document.getElementById('cursor-mark').value;
 
             // Clear previous results
             resultsDiv.innerHTML = '';
 
             // Fetch data from the search API
-            fetch(`http://localhost:8080/search?query=${encodeURIComponent(query)}`)
+            fetch(`http://localhost:8080/search?query=${encodeURIComponent(query)}&cursorMark=${cursorMark}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
@@ -32,9 +36,8 @@
                     return response.json();
                 })
                 .then(data => {
-                    // Populate the results in the search-results div
-                    if (Array.isArray(data) && data.length > 0) {
-                        data.forEach(item => {
+                    if (Array.isArray(data.searchResults)) {
+                        data.searchResults.forEach(item => {
                             // Create search result nodes
                             const itemDiv = document.createElement('div');
                             const itemImg = document.createElement('img');
@@ -55,6 +58,10 @@
                             itemDiv.appendChild(itemLabels);
                             resultsDiv.appendChild(itemDiv);
                         });
+			// Replace cursor mark for the next page of search results
+			if (data.hasMore) {
+			    document.getElementById('cursor-mark').value = data.nextCursorMark;
+			}
                     } else {
                         resultsDiv.textContent = 'No results found.';
                     }

@@ -53,8 +53,12 @@
                             // Link image src to the host
                             itemImg.src = 'http://192.168.0.16/static/img' + item.filepath;
                             // Put captions and labels as text
-                            itemCaptions.textContent = 'Captions: ' + item.captions.join(' ');
-                            itemLabels.textContent = 'Labels: ' + item.labels.join(' ');
+                            if (Array.isArray(item.captions) && item.captions.length > 0) {
+                              itemCaptions.textContent = 'Captions: ' + item.captions.join(' ');
+                            }
+                            if (Array.isArray(item.labels) && item.labels.length > 0) {
+                              itemLabels.textContent = 'Labels: ' + item.labels.join(' ');
+                            }
                             // Append nodes
                             itemDiv.appendChild(itemImg);
                             itemDiv.appendChild(itemCaptions);

@@ -2,6 +2,9 @@ body {
     padding: 4px;
     background-color: #ddd;
 }
+#search-form {
+    margin: 8px;
+}
 .search-result {
     display: inline-block;
     margin: 8px;

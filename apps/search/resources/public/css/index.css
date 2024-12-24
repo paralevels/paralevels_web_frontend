@@ -5,6 +5,9 @@ body {
 #search-form {
     margin: 8px;
 }
+#query {
+    width: 777px;
+}
 .search-result {
     display: inline-block;
     margin: 8px;

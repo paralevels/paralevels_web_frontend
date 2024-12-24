@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="/css/index.css">
 </head>
 <body>
-    <h1>Search</h1>
     <form id="search-form">
         <input type="text" id="query" name="query" placeholder="Enter search term" required>
         <button type="submit">Search</button>
@@ -36,15 +35,21 @@
                     // Populate the results in the search-results div
                     if (Array.isArray(data) && data.length > 0) {
                         data.forEach(item => {
+                            // Create search result nodes
                             const itemDiv = document.createElement('div');
                             const itemImg = document.createElement('img');
                             const itemCaptions = document.createElement('div');
                             const itemLabels = document.createElement('div');
+                            // Assign class names
                             itemDiv.className = 'search-result';
+                            itemCaptions.className = 'captions';
+                            itemLabels.className = 'labels';
+                            // Link image src to the host
                             itemImg.src = 'http://192.168.0.16/static/img' + item.filepath;
-                            itemImg.width = 400;
+                            // Put captions and labels as text
                             itemCaptions.textContent = 'Captions: ' + item.captions.join(' ');
                             itemLabels.textContent = 'Labels: ' + item.labels.join(' ');
+                            // Append nodes
                             itemDiv.appendChild(itemImg);
                             itemDiv.appendChild(itemCaptions);
                             itemDiv.appendChild(itemLabels);

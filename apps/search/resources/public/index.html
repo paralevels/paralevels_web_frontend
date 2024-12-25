@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+  </head>
+  <body>
+    <form id="search-form">
+      <input type="text" id="query" name="query" placeholder="Enter search term" required>
+      <!-- Cursor mark is used for pagination with Solr. -->
+      <!-- Using cursor mark is faster than working with start row and total number of rows. -->
+      <input type="hidden" id="cursor-mark" name="cursor-mark" value="*">
+      <button type="submit">Search</button>
+    </form>
+    <div id="search-results"></div>
+    <div id="search-message"></div>
+    <!-- Popup container that shows a full-size image-->
+    <div id="popup" class="popup hidden">
+      <img id="popup-image" src="" alt="full-size image">
+    </div>
+    <script>
+      // Reset cursor mark
+      document.getElementById('cursor-mark').value = '*';
+      const form = document.getElementById('search-form');
+      const searchResultsDiv = document.getElementById('search-results');
+      const searchMessageDiv = document.getElementById('search-message');
+      const popup = document.getElementById('popup');
+      const popupImage = document.getElementById('popup-image');
+      form.addEventListener('submit', function(event) {
+          event.preventDefault();          // Prevent form submission
+          searchResultsDiv.innerHTML = ''; // Clear previous results
+          searchMessageDiv.innerHTML = ''; // Clear previous message
+          // Fetch data from the search API
+          const query = document.getElementById('query').value;
+          const cursorMark = document.getElementById('cursor-mark').value;
+          fetch(`http://localhost:8080/search?query=${encodeURIComponent(query)}&cursorMark=${cursorMark}`)
+              .then(response => {
+                  if (!response.ok) {
+                      throw new Error(`HTTP error! status: ${response.status}`);
+                  }
+                  return response.json();
+              })
+              .then(data => {
+                  if (Array.isArray(data.searchResults) && data.searchResults.length > 0) {
+                      data.searchResults.forEach(searchResult => {
+                          // Create search result nodes
+                          const searchResultDiv = document.createElement('div');
+                          const searchResultImg = document.createElement('img');
+                          const searchResultCaptions = document.createElement('div');
+                          const searchResultLabels = document.createElement('div');
+                          // Assign class names
+                          searchResultDiv.className = 'search-result';
+                          searchResultCaptions.className = 'captions';
+                          searchResultLabels.className = 'labels';
+                          // Link image src to the host
+                          searchResultImg.src = 'http://192.168.0.16/static/img' + searchResult.filepath;
+                          // Put captions and labels as text
+                          if (Array.isArray(searchResult.captions) && searchResult.captions.length > 0) {
+                              searchResultCaptions.textContent = 'Captions: ' + searchResult.captions.join(' ');
+                          }
+                          if (Array.isArray(searchResult.labels) && searchResult.labels.length > 0) {
+                              searchResultLabels.textContent = 'Labels: ' + searchResult.labels.join(' ');
+                          }
+                          // On click, show popup with full-size image
+                          searchResultDiv.addEventListener('click', () => {
+                              popupImage.src = searchResultImg.src;
+                              popup.classList.remove('hidden');
+                          });
+                          // Append nodes
+                          searchResultDiv.appendChild(searchResultImg);
+                          searchResultDiv.appendChild(searchResultCaptions);
+                          searchResultDiv.appendChild(searchResultLabels);
+                          searchResultsDiv.appendChild(searchResultDiv);
+                      });
+		      // Replace cursor mark for the next page of search results
+		      if (data.hasMore) {
+			  document.getElementById('cursor-mark').value = data.nextCursorMark;
+		      }
+                  } else {
+                      searchMessageDiv.textContent = 'No results found.';
+                  }
+              })
+              .catch(error => {
+                  console.error('Error:', error);
+                  searchMessageDiv.textContent = 'An error occurred while fetching search results.';
+              });
+      });
+      // Popup is the whole background outside of the image.
+      // On click, hide popup and clear popupImage.
+      popup.addEventListener('click', (event) => {
+          if (event.target === popup) {
+              popup.classList.add('hidden');
+              popupImage.src = '';
+          }
+      });
+    </script>
+  </body>
+</html>

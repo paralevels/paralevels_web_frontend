@@ -14,6 +14,7 @@
         <button type="submit">Search</button>
     </form>
     <div id="search-results"></div>
+    <div id="search-message"></div>
     <!-- Popup container that shows a full-size image-->
     <div id="popup" class="popup hidden">
         <img id="popup-image" src="" alt="full-size image">
@@ -24,6 +25,7 @@
 
         const form = document.getElementById('search-form');
         const searchResultsDiv = document.getElementById('search-results');
+        const searchMessageDiv = document.getElementById('search-message');
         const popup = document.getElementById('popup');
         const popupImage = document.getElementById('popup-image');
 
@@ -80,12 +82,12 @@
 			    document.getElementById('cursor-mark').value = data.nextCursorMark;
 			}
                     } else {
-                        searchResultsDiv.textContent = 'No results found.';
+                        searchMessageDiv.textContent = 'No results found.';
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    searchResultsDiv.textContent = 'An error occurred while fetching search results.';
+                    searchMessageDiv.textContent = 'An error occurred while fetching search results.';
                 });
         });
         // Popup is the whole background outside of the image.

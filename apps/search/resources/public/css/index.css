@@ -29,11 +29,12 @@ body {
 .search-result .labels {
     display: none;
 }
-
+#search-message {
+    margin: 8px;
+}
 .popup.hidden {
   display: none;
 }
-
 .popup {
   position: fixed;
   top: 0;

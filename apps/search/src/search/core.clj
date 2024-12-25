@@ -4,16 +4,9 @@
             [compojure.route :refer [resources not-found]]
             [ring.middleware.params :refer [wrap-params]]))
 
-(defn search-handler [request]
-  (let [query (get-in request [:params "query"])]
-    {:status 200
-     :headers {"Content-Type" "application/json"}
-     :body (str "{\"message\": \"You searched for: " query "\"}")}))
-
 (def app
   (-> (routes
-       (GET "/" [] {:status 301 :headers {"Location" "/index.html"}})
-       (GET "/search" request (search-handler request))
+       (GET "/search" [] {:status 301 :headers {"Location" "/index.html"}})
        (resources "/")
        (not-found "Page not found"))
       wrap-params))

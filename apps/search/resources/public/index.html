@@ -14,13 +14,18 @@
       <button type="submit">Search</button>
     </form>
     <div id="search-results"></div>
-
+    <!-- Popup container that shows a full-size image-->
+    <div id="popup" class="popup hidden">
+      <img id="popup-image" src="" alt="full-size image">
+    </div>
     <script>
         // Reset cursor mark
         document.getElementById('cursor-mark').value = '*';
 
         const form = document.getElementById('search-form');
         const resultsDiv = document.getElementById('search-results');
+        const popup = document.getElementById('popup');
+        const popupImage = document.getElementById('popup-image');
 
         form.addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent form submission
@@ -59,6 +64,11 @@
                             if (Array.isArray(item.labels) && item.labels.length > 0) {
                               itemLabels.textContent = 'Labels: ' + item.labels.join(' ');
                             }
+                            // On click, show popup with full-size image
+                            itemDiv.addEventListener('click', () => {
+                              popupImage.src = itemImg.src;
+                              popup.classList.remove('hidden');
+                            });
                             // Append nodes
                             itemDiv.appendChild(itemImg);
                             itemDiv.appendChild(itemCaptions);
@@ -77,6 +87,14 @@
                     console.error('Error:', error);
                     resultsDiv.textContent = 'An error occurred while fetching search results.';
                 });
+        });
+        // Popup is the whole background outside of the image.
+        // On click, hide popup and clear popupImage.
+        popup.addEventListener('click', (event) => {
+            if (event.target === popup) {
+                popup.classList.add('hidden');
+                popupImage.src = '';
+            }
         });
     </script>
 <!--

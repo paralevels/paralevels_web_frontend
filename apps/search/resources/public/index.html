@@ -33,6 +33,8 @@
           const cursorMark = document.getElementById('cursor-mark').value;
           // Clear previous results
           searchResultsDiv.innerHTML = '';
+          // Clear previous message
+          searchMessageDiv.innerHTML = '';
           // Fetch data from the search API
           fetch(`http://localhost:8080/search?query=${encodeURIComponent(query)}&cursorMark=${cursorMark}`)
               .then(response => {

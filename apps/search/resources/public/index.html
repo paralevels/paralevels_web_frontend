@@ -28,14 +28,12 @@
       const popup = document.getElementById('popup');
       const popupImage = document.getElementById('popup-image');
       form.addEventListener('submit', function(event) {
-          event.preventDefault(); // Prevent form submission
+          event.preventDefault();          // Prevent form submission
+          searchResultsDiv.innerHTML = ''; // Clear previous results
+          searchMessageDiv.innerHTML = ''; // Clear previous message
+          // Fetch data from the search API
           const query = document.getElementById('query').value;
           const cursorMark = document.getElementById('cursor-mark').value;
-          // Clear previous results
-          searchResultsDiv.innerHTML = '';
-          // Clear previous message
-          searchMessageDiv.innerHTML = '';
-          // Fetch data from the search API
           fetch(`http://localhost:8080/search?query=${encodeURIComponent(query)}&cursorMark=${cursorMark}`)
               .then(response => {
                   if (!response.ok) {

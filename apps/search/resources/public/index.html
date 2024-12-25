@@ -7,16 +7,16 @@
 </head>
 <body>
     <form id="search-form">
-      <input type="text" id="query" name="query" placeholder="Enter search term" required>
-      <!-- Cursor mark is used for pagination with Solr. -->
-      <!-- Using cursor mark is faster than working with start row and total number of rows. -->
-      <input type="hidden" id="cursor-mark" name="cursor-mark" value="*">
-      <button type="submit">Search</button>
+        <input type="text" id="query" name="query" placeholder="Enter search term" required>
+        <!-- Cursor mark is used for pagination with Solr. -->
+        <!-- Using cursor mark is faster than working with start row and total number of rows. -->
+        <input type="hidden" id="cursor-mark" name="cursor-mark" value="*">
+        <button type="submit">Search</button>
     </form>
     <div id="search-results"></div>
     <!-- Popup container that shows a full-size image-->
     <div id="popup" class="popup hidden">
-      <img id="popup-image" src="" alt="full-size image">
+        <img id="popup-image" src="" alt="full-size image">
     </div>
     <script>
         // Reset cursor mark
@@ -59,15 +59,15 @@
                             searchResultImg.src = 'http://192.168.0.16/static/img' + searchResult.filepath;
                             // Put captions and labels as text
                             if (Array.isArray(searchResult.captions) && searchResult.captions.length > 0) {
-                              searchResultCaptions.textContent = 'Captions: ' + searchResult.captions.join(' ');
+                                searchResultCaptions.textContent = 'Captions: ' + searchResult.captions.join(' ');
                             }
                             if (Array.isArray(searchResult.labels) && searchResult.labels.length > 0) {
-                              searchResultLabels.textContent = 'Labels: ' + searchResult.labels.join(' ');
+                                searchResultLabels.textContent = 'Labels: ' + searchResult.labels.join(' ');
                             }
                             // On click, show popup with full-size image
                             searchResultDiv.addEventListener('click', () => {
-                              popupImage.src = searchResultImg.src;
-                              popup.classList.remove('hidden');
+                                popupImage.src = searchResultImg.src;
+                                popup.classList.remove('hidden');
                             });
                             // Append nodes
                             searchResultDiv.appendChild(searchResultImg);

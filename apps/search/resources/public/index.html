@@ -23,7 +23,7 @@
         document.getElementById('cursor-mark').value = '*';
 
         const form = document.getElementById('search-form');
-        const resultsDiv = document.getElementById('search-results');
+        const searchResultsDiv = document.getElementById('search-results');
         const popup = document.getElementById('popup');
         const popupImage = document.getElementById('popup-image');
 
@@ -33,7 +33,7 @@
             const cursorMark = document.getElementById('cursor-mark').value;
 
             // Clear previous results
-            resultsDiv.innerHTML = '';
+            searchResultsDiv.innerHTML = '';
 
             // Fetch data from the search API
             fetch(`http://localhost:8080/search?query=${encodeURIComponent(query)}&cursorMark=${cursorMark}`)
@@ -44,48 +44,48 @@
                     return response.json();
                 })
                 .then(data => {
-                    if (Array.isArray(data.searchResults)) {
-                        data.searchResults.forEach(item => {
+                    if (Array.isArray(data.searchResults) && data.searchResults.length > 0) {
+                        data.searchResults.forEach(searchResult => {
                             // Create search result nodes
-                            const itemDiv = document.createElement('div');
-                            const itemImg = document.createElement('img');
-                            const itemCaptions = document.createElement('div');
-                            const itemLabels = document.createElement('div');
+                            const searchResultDiv = document.createElement('div');
+                            const searchResultImg = document.createElement('img');
+                            const searchResultCaptions = document.createElement('div');
+                            const searchResultLabels = document.createElement('div');
                             // Assign class names
-                            itemDiv.className = 'search-result';
-                            itemCaptions.className = 'captions';
-                            itemLabels.className = 'labels';
+                            searchResultDiv.className = 'search-result';
+                            searchResultCaptions.className = 'captions';
+                            searchResultLabels.className = 'labels';
                             // Link image src to the host
-                            itemImg.src = 'http://192.168.0.16/static/img' + item.filepath;
+                            searchResultImg.src = 'http://192.168.0.16/static/img' + searchResult.filepath;
                             // Put captions and labels as text
-                            if (Array.isArray(item.captions) && item.captions.length > 0) {
-                              itemCaptions.textContent = 'Captions: ' + item.captions.join(' ');
+                            if (Array.isArray(searchResult.captions) && searchResult.captions.length > 0) {
+                              searchResultCaptions.textContent = 'Captions: ' + searchResult.captions.join(' ');
                             }
-                            if (Array.isArray(item.labels) && item.labels.length > 0) {
-                              itemLabels.textContent = 'Labels: ' + item.labels.join(' ');
+                            if (Array.isArray(searchResult.labels) && searchResult.labels.length > 0) {
+                              searchResultLabels.textContent = 'Labels: ' + searchResult.labels.join(' ');
                             }
                             // On click, show popup with full-size image
-                            itemDiv.addEventListener('click', () => {
-                              popupImage.src = itemImg.src;
+                            searchResultDiv.addEventListener('click', () => {
+                              popupImage.src = searchResultImg.src;
                               popup.classList.remove('hidden');
                             });
                             // Append nodes
-                            itemDiv.appendChild(itemImg);
-                            itemDiv.appendChild(itemCaptions);
-                            itemDiv.appendChild(itemLabels);
-                            resultsDiv.appendChild(itemDiv);
+                            searchResultDiv.appendChild(searchResultImg);
+                            searchResultDiv.appendChild(searchResultCaptions);
+                            searchResultDiv.appendChild(searchResultLabels);
+                            searchResultsDiv.appendChild(searchResultDiv);
                         });
 			// Replace cursor mark for the next page of search results
 			if (data.hasMore) {
 			    document.getElementById('cursor-mark').value = data.nextCursorMark;
 			}
                     } else {
-                        resultsDiv.textContent = 'No results found.';
+                        searchResultsDiv.textContent = 'No results found.';
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    resultsDiv.textContent = 'An error occurred while fetching search results.';
+                    searchResultsDiv.textContent = 'An error occurred while fetching search results.';
                 });
         });
         // Popup is the whole background outside of the image.

@@ -97,18 +97,5 @@
             }
         });
     </script>
-<!--
-    <script>
-        const form = document.getElementById('search-form');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const query = document.getElementById('query').value;
-            fetch(`http://localhost:8080/search?query=${encodeURIComponent(query)}`)
-                .then(response => response.json())
-                .then(data => console.log('Search result:', data))
-                .catch(error => console.error('Error:', error));
-        });
-    </script>
--->
 </body>
 </html>

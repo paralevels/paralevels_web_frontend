@@ -6,7 +6,8 @@
 
 (def app
   (-> (routes
-       (GET "/search" [] {:status 301 :headers {"Location" "/index.html"}})
+       ;; Routes /search to resources/public/search.html
+       (GET "/search" [] {:status 301 :headers {"Location" "/search.html"}})
        (resources "/")
        (not-found "Page not found"))
       wrap-params))

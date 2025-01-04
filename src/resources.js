@@ -27,3 +27,7 @@ export const ImagePaths = [
   '/resources/assets/images/25_bliss.png',
   '/resources/assets/images/26_colors.jpg',
 ];
+
+export const Slogans = {
+  head: 'Go somewhere. Anywhere.'
+};

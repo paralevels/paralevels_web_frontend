@@ -1,17 +1,31 @@
 body {
   background-color: #070707;
+  color: #707070;
   font-family: "Courier New";
-  font-size: 14px;
+  font-size: 16px;
 }
 
 #main {
-  margin: 350px auto;
-  width: 777px;
+  margin: 16px;
 }
 
-#squares {
+#app {
   margin: 0 auto;
   width: 720px;
+}
+
+#head {
+  margin: 8px 0;
+}
+
+#body {
+  margin: 8px 0;
+}
+
+#foot {
+  margin: 8px 0;
+  text-align: center;
+  font-size: 12px;
 }
 
 img.square {

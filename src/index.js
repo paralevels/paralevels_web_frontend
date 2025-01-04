@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ImagePaths } from './resources.js';
-import './css/index.css'; // Import your CSS file
+import { Head } from './components/head.js';
+import { Body } from './components/body.js';
+import { Foot } from './components/foot.js';
+
+import './css/index.css';
 
 const App = () => (
-  <div id="squares">
-  {ImagePaths.map((path, index) => (
-    <img class="square" key={index} src={path} alt={path}/>
-  ))}
+  <div id="app">
+    <Head />
+    <Body />
+    <Foot />
   </div>
 );
-const appRoot = ReactDOM.createRoot(document.getElementById('app'));
-appRoot.render(<App/>);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);

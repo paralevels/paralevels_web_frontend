@@ -35,7 +35,7 @@
           // Fetch data from the search API
           const query = document.getElementById('query').value;
           const cursorMark = document.getElementById('cursor-mark').value;
-          fetch(`http://localhost:8080/search?query=${encodeURIComponent(query)}&cursorMark=${cursorMark}`)
+          fetch(`/contentsearch?query=${encodeURIComponent(query)}&cursorMark=${cursorMark}`)
               .then(response => {
                   if (!response.ok) {
                       throw new Error(`HTTP error! status: ${response.status}`);
@@ -74,10 +74,10 @@
                           searchResultDiv.appendChild(searchResultLabels);
                           searchResultsDiv.appendChild(searchResultDiv);
                       });
-		      // Replace cursor mark for the next page of search results
-		      if (data.hasMore) {
-			  document.getElementById('cursor-mark').value = data.nextCursorMark;
-		      }
+                      // Replace cursor mark for the next page of search results
+                      if (data.hasMore) {
+                          document.getElementById('cursor-mark').value = data.nextCursorMark;
+                      }
                   } else {
                       searchMessageDiv.textContent = 'No results found.';
                   }

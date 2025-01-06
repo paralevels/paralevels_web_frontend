@@ -14,4 +14,4 @@
       wrap-params))
 
 (defn -main [& args]
-  (run-jetty app {:port 80 :join? false}))
+  (run-jetty app {:port 8070 :join? false}))

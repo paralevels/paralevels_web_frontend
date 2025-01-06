@@ -1,4 +1,5 @@
 (ns search.core
+  (:gen-class)
   (:require [ring.adapter.jetty :refer [run-jetty]]
             [compojure.core :refer [GET routes]]
             [compojure.route :refer [resources not-found]]

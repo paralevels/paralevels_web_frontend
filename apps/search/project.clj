@@ -7,7 +7,8 @@
                  [org.clojure/clojurescript "1.11.4"]
                  [ring "1.9.6"]
                  [compojure "1.7.0"]]
-  :main ^:skip-aot search.core
+  :main search.core
+  :aot [search.core]
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all
                        :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}}

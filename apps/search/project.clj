@@ -5,8 +5,9 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [org.clojure/clojurescript "1.11.4"]
-                 [ring "1.9.6"]
-                 [compojure "1.7.0"]]
+                 [clj-http "3.12.3"]
+                 [compojure "1.7.0"]
+                 [ring "1.9.6"]]
   :main search.core
   :aot [search.core]
   :target-path "target/%s"

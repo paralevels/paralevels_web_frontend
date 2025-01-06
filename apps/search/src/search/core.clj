@@ -13,7 +13,7 @@
        (GET "/search" [] {:status 301 :headers {"Location" "/search.html"}})
 
        ;; Routes /contentsearch to the actual content search application
-       (GET "/contentsearch" {query-params :query-params}
+       (GET "/searchcontents" {query-params :query-params}
               (let [url "http://localhost:8080/search"
                     response (http/get url {:query-params query-params})]
                 {:status (:status response)

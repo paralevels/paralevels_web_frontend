@@ -35,7 +35,7 @@
           // Fetch data from the search API
           const query = document.getElementById('query').value;
           const cursorMark = document.getElementById('cursor-mark').value;
-          fetch(`/contentsearch?query=${encodeURIComponent(query)}&cursorMark=${cursorMark}`)
+          fetch(`/searchcontents?query=${encodeURIComponent(query)}&cursorMark=${cursorMark}`)
               .then(response => {
                   if (!response.ok) {
                       throw new Error(`HTTP error! status: ${response.status}`);

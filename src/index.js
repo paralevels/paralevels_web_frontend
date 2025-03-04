@@ -1,17 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { Head } from './components/head.js';
 import { Body } from './components/body.js';
 import { Foot } from './components/foot.js';
+import { Murmur } from './components/murmur.js';
 
 import './css/index.css';
 
-const App = () => (
+const Homepage = () => (
   <div id="app">
     <Head />
     <Body />
     <Foot />
   </div>
+);
+
+const App = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<Homepage />} />
+      <Route path="/murmur" element={<Murmur />} />
+    </Routes>
+  </Router>
 );
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

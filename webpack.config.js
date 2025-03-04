@@ -6,7 +6,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    clean: true, // Delete old files
+    clean: true,     // Delete old files
+    publicPath: '/', // Important for routing
   },
   module: {
     rules: [

@@ -11,7 +11,7 @@ export const Murmur = () => (
   Paralevels is not a company.<br/>
   Paralevels is not a game studio.<br/>
   Paralevels is not real.<br/>
-  It is a hidden shadow between layers.<br/>
+  It is a quick shadow between layers.<br/>
   It is a short pause between moments.<br/>
   It is a dream in a dream.<br/>
   </div>

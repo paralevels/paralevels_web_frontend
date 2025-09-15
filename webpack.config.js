@@ -34,7 +34,10 @@ module.exports = {
       directory: path.join(__dirname, 'public'),
     },
     port: 3000,
-    historyApiFallback: true, // Routes fallback to index.html
+    // Routes fallback to index.html.
+    // Must add fallback configs on
+    // Apache and Nginx.
+    historyApiFallback: true,
   },
   mode: 'production',
   performance: {

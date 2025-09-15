@@ -37,4 +37,9 @@ module.exports = {
     historyApiFallback: true, // Routes fallback to index.html
   },
   mode: 'production',
+  performance: {
+    // Show warning when code + assets exeeds 512 kB
+    maxAssetSize: 512000, // Max js bundle size
+    maxEntrypointSize: 512000,
+  }
 };

@@ -10,6 +10,8 @@
   <body>
     <form id="search-form">
       <input type="text" id="query" name="query" placeholder="Enter search term" required>
+      <!-- Use hidden field to cache the previous query string -->
+      <input type="hidden" id="query-previous" name="query-previous" value="">
       <!-- Cursor mark is used for pagination with Solr. -->
       <!-- Using cursor mark is faster than working with start row and total number of rows. -->
       <input type="hidden" id="cursor-mark" name="cursor-mark" value="*">
@@ -35,6 +37,11 @@
           searchMessageDiv.innerHTML = ''; // Clear previous message
           // Fetch data from the search API
           const query = document.getElementById('query').value;
+          const queryPrevious = document.getElementById('query-previous').value;
+          // New query. Reset cursorMark.
+          if(query !== queryPrevious) {
+            document.getElementById('cursor-mark').value = '*';
+          }
           const cursorMark = document.getElementById('cursor-mark').value;
           fetch(`/searchcontents?query=${encodeURIComponent(query)}&cursorMark=${cursorMark}`)
               .then(response => {
@@ -79,6 +86,8 @@
                       if (data.hasMore) {
                           document.getElementById('cursor-mark').value = data.nextCursorMark;
                       }
+                      // Cache the previous query
+                      document.getElementById('query-previous').value = query;
                   } else {
                       searchMessageDiv.textContent = 'No results found.';
                   }

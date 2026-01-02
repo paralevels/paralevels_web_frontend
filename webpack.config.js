@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/index.js', // Main JavaScript entry point
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: 'bundle.[contenthash].js',
     clean: true,     // Delete old files
     publicPath: '/', // Important for routing
   },

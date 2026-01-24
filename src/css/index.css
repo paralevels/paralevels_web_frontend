@@ -33,3 +33,22 @@ body {
 img.square {
   width:  240px;
 }
+
+a {
+  text-decoration: none;
+}
+
+.right {
+  margin-left: 20px;
+  float: right;
+}
+
+.doc {
+  max-width: 800px;
+  margin: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 100px;
+  color: #070707;
+  background-color: #F7F7F7;
+}

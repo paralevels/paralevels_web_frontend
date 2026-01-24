@@ -32,6 +32,7 @@ module.exports = {
   devServer: {
     static: {
       directory: path.join(__dirname, 'resources'),
+      publicPath: '/resources'
     },
     port: 3000,
     // Routes fallback to index.html.

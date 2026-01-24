@@ -5,6 +5,10 @@ body {
   color: #707070;
   font-family: "Courier New";
   font-size: 16px;
+  background-image: url('/resources/assets/images/background.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #main {

@@ -20,7 +20,7 @@ export const About = () => (
     <li>Experiences that respect the user’s attention rather than compete for it</li>
 </ul>
 
-<p>We are particularly interested in creating “quiet spaces” within digital environments—products that fit naturally into everyday life and invite users to engage on their own terms, for as long or as briefly as they choose.</p>
+<p>We are particularly interested in creating quiet spaces within digital environments—products that fit naturally into everyday life and invite users to engage on their own terms, for as long or as briefly as they choose.</p>
 
 <p>Our goal is to build durable, flexible digital experiences that age well, scale responsibly, and leave room for meaning without demanding it.</p>
 

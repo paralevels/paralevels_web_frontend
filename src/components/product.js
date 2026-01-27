@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Product = () => (
-<div class="doc product">
+<div class="doc liminal">
 <p>Liminal Encounters</p>
 
 <p>Liminal Encounters is a digital experience built around brief, self-contained moments designed to be entered, experienced, and left without obligation.</p>

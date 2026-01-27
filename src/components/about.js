@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const About = () => (
-<div class="doc">
+<div class="doc liminal">
 <p>About Us</p>
 
 <p>We are a digital studio focused on building apps, content, and interactive experiences designed for moments of pause, reflection, and discovery.</p>

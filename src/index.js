@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { ImagePaths } from './resources.js';
 import { Head } from './components/head.js';
-import { Body } from './components/body.js';
 import { Foot } from './components/foot.js';
 import { Terms } from './components/terms.js';
 import { Privacy } from './components/privacy.js';
@@ -11,6 +11,14 @@ import { Product } from './components/product.js';
 import { Murmur } from './components/murmur.js';
 
 import './css/index.css';
+
+const Body = () => (
+<div id="body">
+  {ImagePaths.map((path, index) => (
+    <img className="square" key={index} src={path} alt={path}/>
+  ))}
+</div>
+);
 
 const Homepage = () => (
   <div id="app">

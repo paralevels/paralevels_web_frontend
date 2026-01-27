@@ -18,7 +18,7 @@ export const About = () => (
     <li>Modular content systems that can evolve over time</li>
 
     <li>Experiences that respect the user’s attention rather than compete for it</li>
-</u>
+</ul>
 
 <p>We are particularly interested in creating “quiet spaces” within digital environments—products that fit naturally into everyday life and invite users to engage on their own terms, for as long or as briefly as they choose.</p>
 

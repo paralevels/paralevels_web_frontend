@@ -5,6 +5,7 @@ export const Foot = () => {
   return (
     <div id="foot">
     © {currentYear} Paralevels. All rights reserved.
+    <div class="emptyrows"></div>
     </div>
   );
 };

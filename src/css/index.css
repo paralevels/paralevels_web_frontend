@@ -46,6 +46,10 @@ a {
   float: right;
 }
 
+.emptyrows {
+  padding: 96px;
+}
+
 .doc {
   padding: 96px;
   color: #070707;

@@ -1,6 +1,5 @@
 body {
   margin: 0px;
-  padding: 10px;
   background-color: #070707;
   color: #707070;
   font-family: "Courier New";
@@ -21,15 +20,15 @@ body {
 }
 
 #head {
-  margin: 8px 0;
+  margin: 8px auto;
 }
 
 #body {
-  margin: 8px 0;
+  margin: 16px auto;
 }
 
 #foot {
-  margin: 8px 0;
+  margin: 8px auto;
   text-align: center;
   font-size: 12px;
 }
@@ -43,23 +42,19 @@ a {
 }
 
 .right {
-  margin-left: 20px;
+  margin-left: 24px;
   float: right;
 }
 
 .doc {
-  max-width: 520px;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 100px;
+  padding: 96px;
   color: #070707;
   background-color: #F7F7F7;
 }
 
 .liminal {
   max-width: 360px;
+  padding: 96px;
   color: #707070;
   background-color: #0b0840;
 }

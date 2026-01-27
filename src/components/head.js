@@ -6,6 +6,7 @@ export const Head = () => (
     <div class="right"><a href="/terms">Terms</a></div>
     <div class="right"><a href="/privacy">Privacy</a></div>
     <div class="right"><a href="/about">About</a></div>
+    <div class="right"><a href="/product">Liminal Encounters</a></div>
     <div>{Slogans.head}</div>
   </div>
 );

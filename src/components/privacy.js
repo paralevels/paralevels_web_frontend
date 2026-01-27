@@ -1,6 +1,8 @@
 import React from 'react';
+import { Foot } from './foot.js';
 
 export const Privacy = () => (
+<div>
 <div class="doc">
 
 <p>Privacy Policy</p>
@@ -67,5 +69,7 @@ export const Privacy = () => (
 
 <p>contact@paralevels.com</p>
 
+</div>
+<Foot />
 </div>
 );

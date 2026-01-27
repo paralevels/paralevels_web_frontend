@@ -1,7 +1,10 @@
 import React from 'react';
+import { Foot } from './foot.js';
 
 export const About = () => (
+<div>
 <div class="doc liminal">
+
 <p>About Us</p>
 
 <p>We are a digital studio focused on building apps, content, and interactive experiences designed for moments of pause, reflection, and discovery.</p>
@@ -24,5 +27,7 @@ export const About = () => (
 
 <p>Our goal is to build durable, flexible digital experiences that age well, scale responsibly, and leave room for meaning without demanding it.</p>
 
+</div>
+<Foot />
 </div>
 );

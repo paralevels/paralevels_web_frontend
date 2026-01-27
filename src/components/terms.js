@@ -1,6 +1,8 @@
 import React from 'react';
+import { Foot } from './foot.js';
 
 export const Terms = () => (
+<div>
 <div class="doc">
 
 <p>Terms of Service</p>
@@ -67,5 +69,7 @@ export const Terms = () => (
 
 <p>contact@paralevels.com</p>
 
+</div>
+<Foot />
 </div>
 );

@@ -1,7 +1,10 @@
 import React from 'react';
+import { Foot } from './foot.js';
 
 export const Product = () => (
+<div>
 <div class="doc liminal">
+
 <p>Liminal Encounters</p>
 
 <p>Liminal Encounters is a digital experience built around brief, self-contained moments designed to be entered, experienced, and left without obligation.</p>
@@ -13,5 +16,8 @@ export const Product = () => (
 <p>From a product standpoint, Liminal Encounters is built as a modular system. New encounters can be added over time, allowing the experience to evolve while remaining familiar. The app emphasizes clarity, calm interaction design, and respect for the user’s attention.</p>
 
 <p>Liminal Encounters is not about explanation or resolution. It is about presence—short experiences that sit in the space between narrative and observation, offering something felt rather than instructed.</p>
+
+</div>
+<Foot />
 </div>
 );

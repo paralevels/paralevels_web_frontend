@@ -1,9 +1,9 @@
 import React from 'react';
+import { Head } from './head.js';
 import { Foot } from './foot.js';
 
-export const Product = () => (
-<div>
-<div class="doc liminal">
+const Body = () => (
+<div id="body" class="liminal">
 
 <p>Liminal Encounters</p>
 
@@ -18,6 +18,12 @@ export const Product = () => (
 <p>Liminal Encounters is not about explanation or resolution. It is about presence—short experiences that sit in the space between narrative and observation, offering something felt rather than instructed.</p>
 
 </div>
-<Foot />
-</div>
+);
+
+export const Product = () => (
+  <div id="app">
+    <Head />
+    <Body />
+    <Foot />
+  </div>
 );

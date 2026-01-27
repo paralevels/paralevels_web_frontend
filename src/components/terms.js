@@ -1,9 +1,9 @@
 import React from 'react';
+import { Head } from './head.js';
 import { Foot } from './foot.js';
 
-export const Terms = () => (
-<div>
-<div class="doc">
+const Body = () => (
+<div id="body" class="doc">
 
 <p>Terms of Service</p>
 
@@ -70,6 +70,12 @@ export const Terms = () => (
 <p>contact@paralevels.com</p>
 
 </div>
-<Foot />
-</div>
+);
+
+export const Terms = () => (
+  <div id="app">
+    <Head />
+    <Body />
+    <Foot />
+  </div>
 );

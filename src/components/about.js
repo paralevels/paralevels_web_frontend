@@ -1,9 +1,9 @@
 import React from 'react';
+import { Head } from './head.js';
 import { Foot } from './foot.js';
 
-export const About = () => (
-<div>
-<div class="doc liminal">
+const Body = () => (
+<div id="body" class="liminal">
 
 <p>About Us</p>
 
@@ -28,6 +28,12 @@ export const About = () => (
 <p>Our goal is to build durable, flexible digital experiences that age well, scale responsibly, and leave room for meaning without demanding it.</p>
 
 </div>
-<Foot />
-</div>
+);
+
+export const About = () => (
+  <div id="app">
+    <Head />
+    <Body />
+    <Foot />
+  </div>
 );

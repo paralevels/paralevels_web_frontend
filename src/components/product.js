@@ -17,6 +17,7 @@ const Body = () => (
 
 <p>Liminal Encounters is not about explanation or resolution. It is about presence—short experiences that sit in the space between narrative and observation, offering something felt rather than instructed.</p>
 
+<p>For more information, contact support@paralevels.com.</p>
 </div>
 );
 

@@ -18,6 +18,31 @@ const Body = () => (
 <p>Liminal Encounters is not about explanation or resolution. It is about presence—short experiences that sit in the space between narrative and observation, offering something felt rather than instructed.</p>
 
 <p>For more information, contact support@paralevels.com.</p>
+
+<table style={{ width: '100%' }}>
+  <tbody>
+    <tr>
+      <td style={{ width: '50%', textAlign: 'center' }}>
+        <a href="https://apps.apple.com/us/app/liminal-encounters/id6762347447">
+          <img
+            src="/resources/assets/svgs/apple-download-on-the-app-store.svg"
+            alt="Download on the App Store"
+            style={{ width: '128px' }}
+          />
+        </a>
+      </td>
+      <td style={{ width: '50%', textAlign: 'center' }}>
+        <a href="https://play.google.com/store/apps/details?id=com.paralevels.liminalencounters">
+          <img
+            src="/resources/assets/svgs/google-get-it-on-google-play.svg"
+            alt="Get it on Google Play"
+            style={{ width: '128px' }}
+          />
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 </div>
 );
 

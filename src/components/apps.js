@@ -43,9 +43,6 @@ const Body = () => (
     </tr>
   </tbody>
 </table>
-</div>
-
-<div id="body" class="liminal">
 
 <p>Rearview Millennium</p>
 
@@ -82,7 +79,6 @@ const Body = () => (
   </tbody>
 </table>
 </div>
-
 );
 
 export const Apps = () => (

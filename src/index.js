@@ -7,6 +7,7 @@ import { Foot } from './components/foot.js';
 import { Terms } from './components/terms.js';
 import { Privacy } from './components/privacy.js';
 import { About } from './components/about.js';
+import { Apps } from './components/apps.js';
 import { Product } from './components/product.js';
 import { Murmur } from './components/murmur.js';
 
@@ -35,6 +36,7 @@ const App = () => (
       <Route path="/terms" element={<Terms />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/about" element={<About />} />
+      <Route path="/apps" element={<Apps />} />
       <Route path="/product" element={<Product />} />
       <Route path="/murmur" element={<Murmur />} />
     </Routes>

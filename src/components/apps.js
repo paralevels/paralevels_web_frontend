@@ -58,7 +58,7 @@ const Body = () => (
   <tbody>
     <tr>
       <td style={{ width: '50%', textAlign: 'center' }}>
-        <a href="https://apps.apple.com/us/app/liminal-encounters/id6762347447">
+        <a href="https://apps.apple.com/us/app/rearview-millennium/id6814203111">
           <img
             src="/resources/assets/svgs/apple-download-on-the-app-store.svg"
             alt="Download on the App Store"

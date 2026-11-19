@@ -7,9 +7,9 @@ const Body = () => (
 
 <p>Privacy Policy</p>
 
-<p>Last Updated: 1/24/2026</p>
+<p>Last Updated: 11/19/2026</p>
 
-<p>This Privacy Policy describes how Paralevels LLC (“we,” “us,” or “our”) handles information in connection with the mobile applications Liminal Encounters and Rearview Millennium (“the Apps”).</p>
+<p>This Privacy Policy describes how Paralevels LLC (“we,” “us,” or “our”) handles information in connection with the mobile applications Liminal Encounters, Rearview Millennium, and Ambientdrift (“the Apps”).</p>
 
 <p>1. Information We Collect</p>
 
@@ -18,9 +18,13 @@ const Body = () => (
 <p>However, the Apps may automatically generate non‑personal app data, such as:</p>
 
 <ul>
+    <li>Usage events</li>
+
     <li>Error logs</li>
 
     <li>Crash reports</li>
+
+    <li>Anonymous identifiers</li>
 
     <li>Basic technical diagnostics</li>
 </ul>

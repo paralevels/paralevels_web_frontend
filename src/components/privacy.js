@@ -13,7 +13,7 @@ const Body = () => (
 
 <p>1. Information We Collect</p>
 
-<p>The Apps do not collect personal information from users.</p>
+<p>The Apps do not collect names, email addresses, or other information that directly identifies individual users.</p>
 
 <p>However, the Apps may automatically generate non‑personal app data, such as:</p>
 
@@ -24,19 +24,19 @@ const Body = () => (
 
     <li>Crash reports</li>
 
-    <li>Anonymous identifiers</li>
+    <li>App-generated identifiers</li>
 
     <li>Basic technical diagnostics</li>
 </ul>
 
-<p>This information is collected solely to help us understand app performance, identify issues, and improve the overall experience.</p>
+<p>This information is collected solely to help us understand app usage and performance, identify issues, and improve the overall experience.</p>
 
 <p>2. How We Use This Information</p>
 
 <p>Any app data collected is used only for:</p>
 
 <ul>
-    <li>Research and analysis related to app performance</li>
+    <li>Research and analysis related to app usage and performance</li>
 
     <li>Identifying and resolving technical problems</li>
 

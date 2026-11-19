@@ -7,9 +7,9 @@ const Body = () => (
 
 <p>Terms of Service</p>
 
-<p>Last Updated: 1/24/2026</p>
+<p>Last Updated: 11/19/2026</p>
 
-<p>These Terms of Service (“Terms”) govern your use of Liminal Encounters and any related services, applications, or platforms operated by Paralevels LLC (“we,” “us,” or “our”). By accessing or using our services, you agree to these Terms.</p>
+<p>These Terms of Service (“Terms”) govern your use of Liminal Encounters, Rearview Millennium, Ambientdrift and any related services, applications, or platforms operated by Paralevels LLC (“we,” “us,” or “our”). By accessing or using our services, you agree to these Terms.</p>
 
 <p>1. Use of the Service</p>
 

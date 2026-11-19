@@ -39,13 +39,25 @@ const Body = () => (
 
 <p>Applications distributed through third-party platforms, including the Apple App Store and Google Play, may also be subject to the applicable platform's terms and license agreements. In the event of a conflict concerning application licensing, the applicable platform license agreement takes precedence.</p>
 
-<p>5. Disclaimer of Warranties</p>
+<p>5. Subscriptions and Payments</p>
+
+<p>Certain features or content within our services may require a paid subscription.</p>
+
+<p>Subscription prices, billing periods, and applicable terms are displayed before purchase. Subscriptions may automatically renew unless canceled before the end of the current billing period.</p>
+
+<p>Subscriptions purchased through the Apple App Store or Google Play are billed and managed by the respective platform. You may manage or cancel your subscription through your Apple or Google account settings.</p>
+
+<p>Canceling a subscription generally prevents future renewals but does not automatically provide a refund for the current billing period. Refund requests are subject to applicable platform policies and consumer protection laws.</p>
+
+<p>Access to subscription features may continue until the end of the paid billing period, subject to applicable platform terms.</p>
+
+<p>6. Disclaimer of Warranties</p>
 
 <p>Our services are provided on an “as is” and “as available” basis. We make no warranties, express or implied, regarding the operation, availability, or performance of our services.</p>
 
 <p>We do not guarantee that our services will be uninterrupted, error‑free, or free of harmful components.</p>
 
-<p>6. Limitation of Liability</p>
+<p>7. Limitation of Liability</p>
 
 <p>To the fullest extent permitted by law:</p>
 
@@ -57,15 +69,15 @@ const Body = () => (
     <li>You use our services at your own risk, and you are solely responsible for any damage to your device or loss of data resulting from your use of our services.</li>
 </ul>
 
-<p>7. Termination</p>
+<p>8. Termination</p>
 
 <p>We may suspend or terminate your access to our services at any time, with or without notice, for conduct that we believe violates these Terms or is otherwise harmful to our services or other users.</p>
 
-<p>8. Changes to These Terms</p>
+<p>9. Changes to These Terms</p>
 
 <p>We may update these Terms from time to time. Continued use of our services after changes are posted constitutes acceptance of the updated Terms.</p>
 
-<p>9. Contact Us</p>
+<p>10. Contact Us</p>
 
 <p>If you have questions about these Terms, you may contact us at:</p>
 
